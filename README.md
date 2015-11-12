@@ -4,6 +4,6 @@
 
 有缓存嘛
 
-fork自: [Azeril](http://azeril.me/)，感谢。
+fork自: [CnFeat](http://cnfeat.com/)，感谢。
 
 

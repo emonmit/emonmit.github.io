@@ -49,7 +49,7 @@ description: 意外php中current的奇怪输出，探究一番
 ##探究
 
 我将这个问题提交到stackoverflow [php: Difficult to understand function current](http://stackoverflow.com/questions/33685018/php-difficult-to-understand-function-current?noredirect=1),在回复中，有人说可能是受php版本影响，[https://3v4l.org/4iJj8](https://3v4l.org/4iJj8)，发现的确在php7中问题得到了修复。<br>
-
+![](http://emonmit.github.com/img/3v4l-foreach.png)
 由于这个问题是在看[鸟哥](http://www.laruence.com/)的博客中想起来的，于是在twitter上@了并提问`是否是bug`，然而还没有收到答复。<br>
 
 之后想到php.net上提交个bug单<br>
@@ -65,7 +65,7 @@ description: 意外php中current的奇怪输出，探究一番
 这里大概讲的是之前版本foreach的边界没有做好处理，导致产生了这个问题。<br>
 
 ##小结
-既然这是一个bug，那么在php7以前的版本中就不要使用这样的写法了<br>
+既然这是一个bug，那么在php7以前的版本中就不要使用这样的写法了，以防产生其他的问题。<br>
 
 ##源码分析
 这个之后看看<br>

@@ -53,12 +53,12 @@ description: 意外php中current的奇怪输出，探究一番
 由于这个问题是在看[鸟哥](http://www.laruence.com/)的博客中想起来的，于是在twitter上@了并提问`是否是bug`，然而还没有收到答复。<br>
 
 之后想到php.net上提交个bug单<br>
-![](http://8.shikun.wang/img/php-bug.png)
+![](http://emonmit.github.io/img/php-bug.png)
 
 既然说我提的bug重了，那就看看吧。果然，在其中一个单里找到了相同的问题[Bug #53405 	accessing the iterator inside a foreach loop leads to strange results](https://bugs.php.net/bug.php?id=53405&edit=2)<br>
 
 发现最后一条回复：
-`    [2015-03-09 11:16 UTC] nikic@php.net
+    [2015-03-09 11:16 UTC] nikic@php.net
 
     This was fixed by [https://wiki.php.net/rfc/php7_foreach](https://wiki.php.net/rfc/php7_foreach), the output is now as expected.`<br>
 

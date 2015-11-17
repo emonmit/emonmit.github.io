@@ -41,8 +41,8 @@ description: 意外php中current的奇怪输出，探究一番
 
 这段代码的结果是：<br>
 
-int(1)
-bool(false)
+    int(1)
+    bool(false)
 
 为什么我执行一次空的foreach，current会变成`false`，他现在到底指向了哪里？<br>
 

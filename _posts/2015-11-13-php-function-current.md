@@ -9,6 +9,7 @@ description: 意外php中current的奇怪输出，探究一番
 
 ##引子
 最近发现了一个问题关于foreach与current的问题，直接看例子：<br>
+
 ###Q1:
 
     <?php

@@ -197,7 +197,7 @@ description: foreach中current的奇怪输出，探究一番
 按这里的解释，中间代码第一次进行SEND_REF时，会将变量复制一份，而复制这个变量时，已经有过FE_FETCH操作了，所以current变成了第二个元素。那么再回头看我的代码，vld中第4行在foreach之前，已经产生了`!0`，并不是第一次进行SEND_REF，那结果为什么还是一样的呢，所以，我觉得这个说法并`不靠谱`。<br>
 
 扩充：<br>
-- [深入解析php中的foreach问题](http://www.3lian.com/edu/2013/07-01/77698.html#)`参考问题2，不知道是不是原出处，都不写转载源差评`
+- [深入解析php中的foreach问题](http://www.3lian.com/edu/2013/07-01/77698.html#)`参考问题2，不知道是不是原出处，都不写转载源差评`<br>
 - [深入理解PHP原理之foreach](http://www.laruence.com/2008/11/20/630.html)`这里结合源码对foreach进行了详细讲解，orz鸟哥`
 
 ##参考资源

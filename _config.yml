@@ -50,9 +50,9 @@ defaults:
 # Comments 
 comments :
   provider : duoshuo
-  duoshuo :
+  duoshuo : emon
     short_name : emon 
-  disqus :
+  disqus : emon
       short_name : emon
 
 # Analytics and webmaster tools stuff goes here

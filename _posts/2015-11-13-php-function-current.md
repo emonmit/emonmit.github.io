@@ -60,6 +60,7 @@ description: foreach中current的奇怪输出，探究一番
 看起来这个问题也经过一番论证，当然，最后还是定义为bug。<br>
 
 引用`nikic`对补丁的说明，包括问题产生原因以及解决办法：<br>
+
     Currently there are two ways to iterate an array: Either using the internal
     array pointer or using an external HashPosition. Right now the latter isn't
     interruption safe though and can't be used in any iteration that runs user
@@ -130,6 +131,7 @@ description: foreach中current的奇怪输出，探究一番
 更多信息可查看:[PHP RFC: Fix "foreach" behavior](https://wiki.php.net/rfc/php7_foreach)<br>
 
 ##小结
+
 既然这是一个bug，那么在php7以前的版本中就不要使用这样的写法了，以防产生其他的问题。<br>
 
 ##深度分析
@@ -137,6 +139,7 @@ description: foreach中current的奇怪输出，探究一番
 `欢迎吐槽，毕竟尚未完全弄懂。以下分析以问题1为例。ps:还没对问题2分析`<br>
 
 为了方便起见，我先将我代码中vld的信息拿出来：<br>
+
     Finding entry points
     Branch analysis from position: 0
     Jump found. Position 1 = 9, Position 2 = 17
@@ -181,13 +184,14 @@ description: foreach中current的奇怪输出，探究一番
     Generated using Vulcan Logic Dumper, using php 5.6.0
 
 根据[TIPI项目](www.php-internals.com/book/?p=chapt16/16-01-01-php-foreach&ref=chm&v=TIPI_2014-04-29_V0.8.3)中对foreach的分析：<br>
+
     源代码：
         $arr = array(1,2,3,4,5);
          
         foreach($arr as $key => $row) {
             echo key($arr), '=>', current($arr), "\r\n";
         }
-
+    
     问题：为什么foreach循环体中执行key或current会显示第二个元素（非引用情况）？以key函数为例，我们执行函数调用时，会执行中间代码SEND_REF，此中间代码会将没有设置引用的变量复制一份并设置为引用。当进入循环体时，PHP内核已经经过了一次fetch操作，相当于执行了一次next操作，当前元素指向第二个元素。因此我们在foreach的循环体中执行key函数时，key中调用的数组变量为PHP执行了一次fetch操作的数组拷贝，此时foreach的内部指针指向第二个元素。
 
 按这里的解释，中间代码第一次进行SEND_REF时，会将变量复制一份，而复制这个变量时，已经有过FE_FETCH操作了，所以current变成了第二个元素。那么再回头看我的代码，vld中第4行在foreach之前，已经产生了`!0`，并不是第一次进行SEND_REF，那结果为什么还是一样的呢，所以，我觉得这个说法并`不靠谱`。<br>

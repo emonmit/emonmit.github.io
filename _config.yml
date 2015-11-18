@@ -49,10 +49,10 @@ defaults:
 
 # Comments 
 comments :
-  provider : duoshuo
-  duoshuo : emon
-    short_name : emon 
-  disqus : emon
+  provider : 
+  duoshuo : 
+    short_name :  
+  disqus : 
       short_name : 
 
 # Analytics and webmaster tools stuff goes here

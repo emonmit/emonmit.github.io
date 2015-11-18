@@ -18,7 +18,7 @@ favicon: img/favicon.png
 
 douban_username: 
 twitter_username: 
-github_username: 
+github_username: emonmit
 facebook_username: 
 weibo_username:
 zhihu_username:
@@ -50,10 +50,10 @@ defaults:
 # Comments 
 comments :
   provider : duoshuo
-  duoshuo : 
+  duoshuo : emon
     short_name : emon 
-  disqus : 
-      short_name : 
+  disqus : emon
+      short_name : emon
 
 # Analytics and webmaster tools stuff goes here
 google_analytics: 

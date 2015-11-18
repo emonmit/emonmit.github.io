@@ -4,7 +4,7 @@ header-img: "img/facebook.jpg"
 tagline: "cn"  
 description: "emon | on the way"  
 baseurl: ""
-url: "http://emonmit.github.io"  
+url: "http://8.shikun.wang"  
 
 # About/contact
 owner: 
@@ -18,7 +18,7 @@ favicon: img/favicon.png
 
 douban_username: 
 twitter_username: 
-github_username: 
+github_username: emonmit
 facebook_username: 
 weibo_username:
 zhihu_username:
@@ -50,9 +50,9 @@ defaults:
 # Comments 
 comments :
   provider : duoshuo
-  duoshuo :
+  duoshuo : emon
     short_name : emon 
-  disqus :
+  disqus : emon
       short_name : emon
 
 # Analytics and webmaster tools stuff goes here

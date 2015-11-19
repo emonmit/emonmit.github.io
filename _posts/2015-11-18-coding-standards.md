@@ -17,17 +17,14 @@ Code Implementation<br>
 -------------------<br>
 <br>
 0.  Document your code in source files and the manual. [tm]<br>
-<br>
 1.  Functions that are given pointers to resources should not free them<br>
-<br>
-For instance, ``function int mail(char *to, char *from)`` should NOT free to and/or from.<br>
+  For instance, ``function int mail(char *to, char *from)`` should NOT free to and/or from.<br>
 <br>
 Exceptions:<br>
 <br>
+
 - The function's designated behavior is freeing that resource.  E.g. efree()<br>
-
 - The function is given a boolean argument, that controls whether or not the function may free its arguments (if true - the function must free its arguments, if false - it must not)<br>
-
 - Low-level parser routines, that are tightly integrated with the token cache and the bison code for minimum memory copying overhead.<br>
 <br>
 2.  Functions that are tightly integrated with other functions within the same module, and rely on each other non-trivial behavior, should be documented as such and declared 'static'.  They should be avoided if possible.<br>
@@ -46,46 +43,41 @@ Exceptions:<br>
 <br>
 9.  Prefer emalloc(), efree(), estrdup(), etc. to their standard C library counterparts.  These functions implement an internal "safety-net" mechanism that ensures the deallocation of any unfreed memory at the end of a request.  They also provide useful allocation and overflow information while running in debug mode.<br>
 
-    In almost all cases, memory returned to the engine must be allocated
-    using emalloc().<br>
-
-    The use of malloc() should be limited to cases where a third-party
-    library may need to control or free the memory, or when the memory in
-    question needs to survive between multiple requests.<br>
+In almost all cases, memory returned to the engine must be allocated using emalloc().<br>
+The use of malloc() should be limited to cases where a third-party library may need to control or free the memory, or when the memory in question needs to survive between multiple requests.<br>
 <br>
+
 User Functions/Methods Naming Conventions<br>
-------------------
+------------------<br>
 <br>
 1.  Function names for user-level functions should be enclosed with in the PHP_FUNCTION() macro. They should be in lowercase, with words underscore delimited, with care taken to minimize the letter count. Abbreviations should not be used when they greatly decrease the readability of the function name itself::<br>
 
-    Good:<br>
-    'mcrypt_enc_self_test'<br>
-    'mysql_list_fields'<br>
-<br>
-    Ok:<br>
-    'mcrypt_module_get_algo_supported_key_sizes'<br>
-    (could be 'mcrypt_mod_get_algo_sup_key_sizes'?)<br>
-    'get_html_translation_table'<br>
-    (could be 'html_get_trans_table'?)<br>
-<br>
-    Bad:<br>
-    'hw_GetObjectByQueryCollObj'<br>
-    'pg_setclientencoding'<br>
-    'jf_n_s_i'<br>
+    Good:
+        'mcrypt_enc_self_test'
+        'mysql_list_fields'
+    Ok:
+        'mcrypt_module_get_algo_supported_key_sizes'
+        (could be 'mcrypt_mod_get_algo_sup_key_sizes'?)
+        'get_html_translation_table'
+        (could be 'html_get_trans_table'?)
+    Bad:
+        'hw_GetObjectByQueryCollObj'
+        'pg_setclientencoding'
+        'jf_n_s_i'
+
 <br>
 2.  If they are part of a "parent set" of functions, that parent should be included in the user function name, and should be clearly related to the parent program or function family. This should be in the form of ``parent_*``::<br>
 
     A family of 'foo' functions, for example:<br>
-    <br>
-    Good:<br>
-    'foo_select_bar'<br>
-    'foo_insert_baz'<br>
-    'foo_delete_baz'<br>
-<br>
-    Bad:<br>
-    'fooselect_bar'<br>
-    'fooinsertbaz'<br>
-    'delete_foo_baz'<br>
+    
+    Good:
+        'foo_select_bar'
+        'foo_insert_baz'
+        'foo_delete_baz'
+    Bad:
+        'fooselect_bar'
+        'fooinsertbaz'
+        'delete_foo_baz'
 <br>
 3.  Function names used by user functions should be prefixed with ``_php_``, and followed by a word or an underscore-delimited list of words, in lowercase letters, that describes the function.  If applicable, they should be declared 'static'.<br>
 <br>
@@ -95,26 +87,27 @@ User Functions/Methods Naming Conventions<br>
 <br>
 6.  Method names follow the 'studlyCaps' (also referred to as 'bumpy case' or 'camel caps') naming convention, with care taken to minimize the letter count. The initial letter of the name is lowercase, and each letter that starts a new 'word' is capitalized::<br>
 <br>
-    Good:<br>
-    'connect()'<br>
-    'getData()'<br>
-    'buildSomeWidget()'<br>
-<br>
-    Bad:<br>
-    'get_Data()'<br>
-    'buildsomewidget'<br>
-    'getI()'<br>
+
+    Good:
+        'connect()'
+        'getData()'
+        'buildSomeWidget()'
+    Bad:
+        'get_Data()'
+        'buildsomewidget'
+        'getI()'
 <br>
 7.  Classes should be given descriptive names. Avoid using abbreviations where possible. Each word in the class name should start with a capital letter, without underscore delimiters (CamelCaps starting with a capital letter). The class name should be prefixed with the name of the 'parent set' (e.g. the name of the extension)::<br>
 <br>
-    Good:<br>
-    'Curl'<br>
-    'FooBar'<br>
+
+    Good:
+        'Curl'
+        'FooBar'
+    Bad:
+        'foobar'
+        'foo_bar'
 <br>
-    Bad:<br>
-    'foobar'<br>
-    'foo_bar'<br>
-<br>
+
 Internal Function Naming Convensions<br>
 ----------------------<br>
 <br>
@@ -142,6 +135,7 @@ Syntax and indentation<br>
 <br>
 3.  Be generous with whitespace and braces.  Keep one empty line between the variable declaration section and the statements in a block, as well as between logical statement groups in a block.  Maintain at least one empty line between two functions, preferably two.  Always prefer::<br>
 <br>
+
     if (foo) {
         bar;
     }
@@ -150,6 +144,7 @@ Syntax and indentation<br>
 
     if(foo)bar;
 <br>
+
 4.  When indenting, use the tab character.  A tab is expected to represent four spaces.  It is important to maintain consistency in indenture so that definitions, comments, and control structures line up correctly.<br>
 <br>
 5.  Preprocessor statements (#if and such) MUST start at column one. To indent preprocessor directives you should put the # at the beginning of a line, followed by any number of whitespace.<br>

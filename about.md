@@ -6,6 +6,7 @@ header-img: "img/green.jpg"
 ---
 <br><br><br><br>
 
+<center><img src="http://8.shikun.wang/img/favicon.png" /></center>
 
 <center>学会学习，学会记录，学会分享</center>
 

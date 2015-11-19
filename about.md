@@ -5,7 +5,7 @@ description: "Just Do IT"
 header-img: "img/green.jpg"
 ---
 
-<center style="margin-top:20px"><img src="http://8.shikun.wang/img/favicon.png" /></center>
+<center style="margin:20px"><img src="http://8.shikun.wang/img/favicon.png" /></center>
 
 <center>学会学习，学会记录，学会分享</center>
 

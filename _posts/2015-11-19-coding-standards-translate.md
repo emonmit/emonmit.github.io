@@ -1,6 +1,6 @@
 ---
 layout: post
-title: php7编程规范 - 译文
+title: php内核编程规范 - 译文
 date: 2015-11-19
 categories: php
 tags: [php, coding standards]
@@ -26,3 +26,5 @@ description: php7源码中编程规范文档翻译
 
 2.  同一模块中的函数紧密集成，并且依赖于彼此重要的特性。<br>
 3.  尽可能的使用宏定义（definitions & macros），以便让常量都有个有意义的名字并且操作起来更容易熟练。这条规范只有`0`和`1`分别表示`false`和`true`的时候例外。任何其他使用数字常量来描述不同的特性或者操作时，都应该通过`#define`来使用。
+
+`未完待续`

@@ -201,10 +201,10 @@ description: foreach中current的奇怪输出，探究一番
 - [深入理解PHP原理之foreach](http://www.laruence.com/2008/11/20/630.html)`这里结合源码对foreach进行了详细讲解，orz鸟哥`
 
 ##参考资源
-[Bug #53405 	accessing the iterator inside a foreach loop leads to strange results](https://bugs.php.net/bug.php?id=53405&edit=2)<br>
-[PHP RFC: Fix "foreach" behavior](https://wiki.php.net/rfc/php7_foreach)<br>
-[风雪之隅](http://www.laruence.com/)<br>
-[3V4L](https://3v4l.org/4iJj8)<br>
-[php: Difficult to understand function current](http://stackoverflow.com/questions/33685018/php-difficult-to-understand-function-current?noredirect=1)<br>
-[深入解析php中的foreach问题](http://www.3lian.com/edu/2013/07-01/77698.html)<br>
+- [Bug #53405 	accessing the iterator inside a foreach loop leads to strange results](https://bugs.php.net/bug.php?id=53405&edit=2)<br>
+- [PHP RFC: Fix "foreach" behavior](https://wiki.php.net/rfc/php7_foreach)<br>
+- [风雪之隅](http://www.laruence.com/)<br>
+- [3V4L](https://3v4l.org/4iJj8)<br>
+- [php: Difficult to understand function current](http://stackoverflow.com/questions/33685018/php-difficult-to-understand-function-current?noredirect=1)<br>
+- [深入解析php中的foreach问题](http://www.3lian.com/edu/2013/07-01/77698.html)<br>
 

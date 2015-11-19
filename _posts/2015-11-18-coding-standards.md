@@ -164,7 +164,7 @@ Documentation and Folding Hooks<br>
 <br>
 In order to make sure that the online documentation stays in line with the code, each user-level function should have its user-level function prototype before it along with a brief one-line description of what the function does.  It would look like this::<br>
 
-    /* {{{ proto int abs(int number) 
+    /* \{\{\{ proto int abs(int number) 
     Returns the absolute value of the number */
     PHP_FUNCTION(abs)
     {
@@ -173,13 +173,13 @@ In order to make sure that the online documentation stays in line with the code,
     /* }}} */
 <br>
 
-    The {{{ symbols are the default folding symbols for the folding mode in Emacs and vim (set fdm=marker).  Folding is very useful when dealing with large files because you can scroll through the file quickly and just unfold the function you wish to work on.  The }}} at the end of each function marks the end of the fold, and should be on a separate line.
+    The \{\{\{ symbols are the default folding symbols for the folding mode in Emacs and vim (set fdm=marker).  Folding is very useful when dealing with large files because you can scroll through the file quickly and just unfold the function you wish to work on.  The }}} at the end of each function marks the end of the fold, and should be on a separate line.
 <br>
 The "proto" keyword there is just a helper for the doc/genfuncsummary script which generates a full function summary.  Having this keyword in front of the function prototypes allows us to put folds elsewhere in the code without messing up the function summary.<br>
 <br>
 Optional arguments are written like this::<br>
 
-    /* {{{ proto object imap_header(int stream_id, int msg_no [, int from_length [, int subject_length [, string default_host]]])
+    /* \{\{\{ proto object imap_header(int stream_id, int msg_no [, int from_length [, int subject_length [, string default_host]]])
        Returns a header object with the defined parameters */
     /* }}} */
 <br>

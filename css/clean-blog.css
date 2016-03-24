@@ -7,7 +7,7 @@ body {
 }
 p {
   margin: 8px 0;
-text-indent:2em;
+  text-indent:2em;
 }
 h1,
 h2,
@@ -84,7 +84,7 @@ hr.small {
 }
 .post-container ul,
 .post-container ol {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .post-container ol ol,
 .post-container ol ul,

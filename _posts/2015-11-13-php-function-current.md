@@ -6,7 +6,7 @@ categories: php
 tags: [php, foreach, current]
 description: foreach中current的奇怪输出，探究一番
 ---
-随意转载，请注明出处：[http://8.shikun.wang/php/2015/11/13/php-function-current/](http://8.shikun.wang/php/2015/11/13/php-function-current/)
+随意转载，请注明出处：[http://8.shikun.wang/php/2015/11/13/php-function-current/](http://8.shikun.wang/php/2015/11/13/php-function-current/)<br>
 
 ## 引子
 最近发现了一个问题关于foreach与current的问题，直接看例子：<br>
@@ -198,7 +198,7 @@ description: foreach中current的奇怪输出，探究一番
 
 扩充：<br>
 - [深入解析php中的foreach问题](http://www.3lian.com/edu/2013/07-01/77698.html#)`参考问题2，不知道是不是原出处，都不写转载源差评`<br>
-- [深入理解PHP原理之foreach](http://www.laruence.com/2008/11/20/630.html)`这里结合源码对foreach进行了详细讲解，orz鸟哥`
+- [深入理解PHP原理之foreach](http://www.laruence.com/2008/11/20/630.html)`这里结合源码对foreach进行了详细讲解，orz鸟哥`<br>
 
 ## 参考资源
 - [Bug #53405 	accessing the iterator inside a foreach loop leads to strange results](https://bugs.php.net/bug.php?id=53405&edit=2)<br>

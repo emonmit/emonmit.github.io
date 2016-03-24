@@ -2,7 +2,7 @@
 layout: post
 title: 也许你真的需要一个配置管理系统
 date: 2016-03-24
-categories: 系统设计 工作效率提升
+categories: design
 tags: [系统设计,工作效率提升]
 description: 忍受不了产品频繁修改需求，那就给他们一个自己修改的空间；减少了发版次数又让自己更专注的进行开发，何乐而不为。
 ---

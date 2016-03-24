@@ -6,7 +6,8 @@ categories: design
 tags: [系统设计,工作效率提升]
 description: 忍受不了产品频繁修改需求，那就给他们一个自己修改的空间；减少了发版次数又让自己更专注的进行开发，何乐而不为。
 ---
-随意转载，请注明出处：[http://8.shikun.wang/php/2016/03/24/backend-config-system/](http://8.shikun.wang/php/2016/03/24/backend-config-system/)
+随意转载，请注明出处：[http://8.shikun.wang/design/2016/03/24/backend-config-system/](http://8.shikun.wang/design/2016/03/24/backend-config-system/)
+
 [TOC]
 
 

@@ -8,10 +8,10 @@ description: foreach中current的奇怪输出，探究一番
 ---
 随意转载，请注明出处：[http://8.shikun.wang/php/2015/11/13/php-function-current/](http://8.shikun.wang/php/2015/11/13/php-function-current/)
 
-##引子
+## 引子
 最近发现了一个问题关于foreach与current的问题，直接看例子：<br>
 
-###Q1:
+### Q1:
 
     <?php
         $arr = range(1, 3);
@@ -31,7 +31,7 @@ description: foreach中current的奇怪输出，探究一番
 
 那么问题来了，手册上说current不会改变指针指向，为什么之后的`var_dump(current($arr))`都是输出`int(2)`？<br>
 
-###Q2:
+### Q2:
 
     <?php
         $arr = range(1, 3);
@@ -47,7 +47,7 @@ description: foreach中current的奇怪输出，探究一番
 
 为什么我执行一次空的foreach，current会变成`false`，他现在到底指向了哪里？<br>
 
-##探究
+## 探究
 
 我将这两个问题提交到stackoverflow [php: Difficult to understand function current](http://stackoverflow.com/questions/33685018/php-difficult-to-understand-function-current?noredirect=1),在回复中，有人说可能是受php版本影响，[https://3v4l.org/4iJj8](https://3v4l.org/4iJj8)，发现的确在php7中问题得到了修复。<br>
 ![](http://emonmit.github.io/img/3v4l-foreach.png)
@@ -130,11 +130,11 @@ description: foreach中current的奇怪输出，探究一番
 
 更多信息可查看:[PHP RFC: Fix "foreach" behavior](https://wiki.php.net/rfc/php7_foreach)<br>
 
-##小结
+## 小结
 
 既然这是一个bug，那么在php7以前的版本中就不要使用这样的写法了，以防产生其他的问题。<br>
 
-##深度分析
+## 深度分析
 
 `欢迎吐槽，毕竟尚未完全弄懂。以下分析以问题1为例。ps:还没对问题2分析`<br>
 
@@ -200,7 +200,7 @@ description: foreach中current的奇怪输出，探究一番
 - [深入解析php中的foreach问题](http://www.3lian.com/edu/2013/07-01/77698.html#)`参考问题2，不知道是不是原出处，都不写转载源差评`<br>
 - [深入理解PHP原理之foreach](http://www.laruence.com/2008/11/20/630.html)`这里结合源码对foreach进行了详细讲解，orz鸟哥`
 
-##参考资源
+## 参考资源
 - [Bug #53405 	accessing the iterator inside a foreach loop leads to strange results](https://bugs.php.net/bug.php?id=53405&edit=2)<br>
 - [PHP RFC: Fix "foreach" behavior](https://wiki.php.net/rfc/php7_foreach)<br>
 - [风雪之隅](http://www.laruence.com/)<br>

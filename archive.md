@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Archive"
-description: "从现在起，坚持写博客"
+description: "不爱复制粘贴，但要经常总结"
 header-img: "img/orange.jpg"
 ---
 

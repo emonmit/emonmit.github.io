@@ -8,8 +8,6 @@ description: 忍受不了产品频繁修改需求，那就给他们一个自己�
 ---
 随意转载，请注明出处：[http://8.shikun.wang/design/2016/03/24/backend-config-system/](http://8.shikun.wang/design/2016/03/24/backend-config-system/)
 
-[TOC]
-
 
 ## 源起
 

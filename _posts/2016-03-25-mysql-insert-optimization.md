@@ -89,6 +89,8 @@ max_execution_time`改到了300发现1000次耗时差不多100多秒，这也是
 > - 当从一个文本文件装载一个表时，使用LOAD DATA INFILE。这通常比使用很多INSERT语句快20倍。
 > - 锁定表以加速插入
 
+## 数据量再大的话
+现在只是一万条十万条的批量，如果提升到千万条几亿条的话，还能用一样的方法吗？
 
 ## 参考资源
 - [挽星-mySQL查询优化](http://www.cnblogs.com/younggun/articles/1719943.html)

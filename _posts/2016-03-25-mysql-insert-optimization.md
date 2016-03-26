@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 批量insert的性能提升
-date: 2016-03-24
+date: 2016-03-25
 categories: mysql
 tags: [mysql性能优化]
 description: 小系统出现性能问题，可能是设计问题；解决了设计问题，应该继续想想，量级再大的话，应该怎么做。

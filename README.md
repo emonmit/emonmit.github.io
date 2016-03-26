@@ -9,11 +9,11 @@ TODO　List
 DL 2016-3-31
 源码阅读第一阶段
 
-[ ] PHP的生命周期及相关函数阅读
-[ ] SAPI-CGI 执行流程
-[ ] 了解常用的宏  EG SG PG PHPAPI 等
+- [ ] PHP的生命周期及相关函数阅读
+- [ ] SAPI-CGI 执行流程
+- [ ] 了解常用的宏  EG SG PG PHPAPI 等
 
 其他
 
-[ ] opcode
-[ ] php://output php://input 等应用
+- [ ] opcode
+- [ ] php://output php://input 等应用

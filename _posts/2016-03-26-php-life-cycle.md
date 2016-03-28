@@ -11,7 +11,7 @@ description: 总结下php源码学习过程中的一些点
 
 开始之前，先看看PHP的核心架构，如图：
 
-![](http://emonmit.github.io/img/_post/php-lift-cycle/php_struct.jpg)
+![](http://emonmit.github.io/img/php_struct.jpg)
 
 我们自顶向下的来看这架构：
 
@@ -35,7 +35,7 @@ description: 总结下php源码学习过程中的一些点
 
 以命令行运行一个PHP程序为例：
 
-![](http://emonmit.github.io/img/_post/php-lift-cycle/php_lifespan.png)
+![](http://emonmit.github.io/img/php_lifespan.png)
 
 图中可以看出，在命令行敲下 “php -f test.php” 之后，会有这些操作：
 
@@ -48,7 +48,7 @@ description: 总结下php源码学习过程中的一些点
 
 现在我们来深究下php文件的执行，我们都知道，编程语言最终转化成能被计算机理解的汇编语言要经过语法分析、词法分析、生成中间代码、生成目标代码等过程。PHP也不例外，先看一张php编译的流程图：
 
-![](http://emonmit.github.io/img/_post/php-lift-cycle/opcode.jpg)
+![](http://emonmit.github.io/img/opcode.jpg)
 
 由图可见，经过词法分析、语法分析之后，`最终只生成了中间代码opcode（PHP的一种内部数据结构）`，并没有继续生成目标代码，故而PHP也被称为解释型语言。
 

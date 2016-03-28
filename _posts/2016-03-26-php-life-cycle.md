@@ -55,16 +55,13 @@ description: 总结下php源码学习过程中的一些点
 下面我们再来详细看下从源程序生成opcode的过程。
 以`Hello World!`为例：
 
-	```php
 	<?php
 	    echo "Hello World!";
 	?>
-	```
 
 ### Scanning（Lexing）,将PHP代码转换为语言片段（Tokens）
 PHP原来使用的是Flex，之后改为re2c，源码目录下的*Zend/zend_language_scanner.l*是re2c的规则文件，如果安装了re2c的话，我们还可以修改并生成新的规则文件。*Zend/zend_language_canner.c*会根据规则文件，来对输入的PHP代码进行词法分析，从而得到一个一个的**词**。
 
-	```php
 	<?php
 	    $code = '<?php echo "Hello World!"; ?>';
 	    $tokens = token_get_all($code);
@@ -73,7 +70,6 @@ PHP原来使用的是Flex，之后改为re2c，源码目录下的*Zend/zend_lang
 		}
 		var_dump($tokens);
 	?>
-	```
 
 这里用`token_name`函数将解析器代号修改成了符号名称说明，更加容易理解，关于解释器代号列表可以参见[手册](http://php.net/manual/zh/tokens.php)。
 
@@ -129,7 +125,6 @@ PHP原来使用的是Flex，之后改为re2c，源码目录下的*Zend/zend_lang
 
 在该阶段，Tokens被编译成一个个op_array，之前说了opcode其实是php内部实现的一种数据结构，在源码中，可以看到（version : php5.6）：
 
-	```c
 	struct _zend_op {
 		opcode_handler_t handler; //执行时调用的处理函数
 		znode_op op1; //操作数1
@@ -142,11 +137,9 @@ PHP原来使用的是Flex，之后改为re2c，源码目录下的*Zend/zend_lang
 		zend_uchar op2_type; //操作数1类型
 		zend_uchar result_type; //结果类型
 	};
-	```
 
 而编译完成的opcode是存在op_array中的，看下op_array的源码：
 
-	```c
 	struct _zend_op_array {
 	/* Common elements */
 	zend_uchar type;
@@ -199,11 +192,9 @@ PHP原来使用的是Flex，之后改为re2c，源码目录下的*Zend/zend_lang
 
 	void *reserved[ZEND_MAX_RESERVED_RESOURCES];
 	};
-	```
 
 保存好op_array后，由excute方法逐条执行，在此阶段，就会调用之前提到的`opcode_handler_t handler`里存储的函数指针。
 
-	```c
 	ZEND_API void zend_execute(zend_op_array *op_array TSRMLS_DC)
 	{
 		if (EG(exception)) {
@@ -211,7 +202,6 @@ PHP原来使用的是Flex，之后改为re2c，源码目录下的*Zend/zend_lang
 		} 
 		zend_execute_ex(i_create_execute_data_from_op_array(op_array, 0 TSRMLS_CC) TSRMLS_CC);
 	}
-	```
 
 	PHP有三种方式来进行opcode的处理:CALL，SWITCH和GOTO。
 	

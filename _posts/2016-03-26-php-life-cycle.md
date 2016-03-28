@@ -203,8 +203,9 @@ PHP原来使用的是Flex，之后改为re2c，源码目录下的*Zend/zend_lang
 		zend_execute_ex(i_create_execute_data_from_op_array(op_array, 0 TSRMLS_CC) TSRMLS_CC);
 	}
 
+**扩展**
+
 	PHP有三种方式来进行opcode的处理:CALL，SWITCH和GOTO。
-	
 	PHP默认使用CALL的方式，也就是函数调用的方式，由于opcode执行是每个PHP程序频繁需要进行的操作，可以使用SWITCH或者GOTO的方式来分发， 通常GOTO的效率相对会高一些，不过效率是否提高依赖于不同的CPU。
 
 到这里，我们的编译流程就结束了，我们的代码最终会被Parsing成：

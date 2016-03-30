@@ -7,6 +7,8 @@ tags: [php内核]
 description: 总结下php源码学习过程中的一些点
 ---
 
+随意转载，请注明出处：[http://8.shikun.wang/php/2016/03/28/php-life-cycle/](http://8.shikun.wang/php/2016/03/28/php-life-cycle/)
+
 ## PHP四层架构
 
 开始之前，先看看PHP的核心架构，如图：
